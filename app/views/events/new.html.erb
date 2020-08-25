@@ -1,0 +1,17 @@
+<div class="container">
+<%= simple_form_for @event do |f| %>
+  <%= f.input :name %>
+  <%= f.input :start_time %>
+  <%= f.input :start_date %>
+  <%= f.input :end_time %>
+  <%= f.input :end_date %>
+  <%= f.input :previous_location %>
+  <%= f.input :event_location %>
+  <%= f.input :category %>
+  <%= f.input :event_location %>
+  <%= f.input :travel_type %>
+  <%= f.input :description %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+
+</div>
