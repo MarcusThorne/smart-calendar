@@ -1,0 +1,17 @@
+<h1>Monthly View</h1>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    View Calendar
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href=<%= root_path %>>Daily</a>
+    <a class="dropdown-item" href=<%= weekly_path %>>Weekly</a>
+  </div>
+</div>
+
+<%= month_calendar do |date| %>
+  <%= link_to root_path(start_date: date) do %>
+    <p><%= date %></p>
+  <% end %>
+<% end %>

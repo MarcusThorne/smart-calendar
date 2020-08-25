@@ -1,5 +1,13 @@
 class EventsController < ApplicationController
-  def home
+  def weekly
+
+  end
+
+  def monthly 
+  end
+
+  def daily
+    @day = params[:start_date]
   end
 
   def new
