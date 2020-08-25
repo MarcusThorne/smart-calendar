@@ -1,6 +1,16 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  
+  def weekly
+  end
 
+  def monthly 
+  end
+
+  def daily
+    @day = params[:start_date]
+  end
+ 
   def home
     @events = Event.all
   end

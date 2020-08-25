@@ -1,0 +1,42 @@
+<h1>Daily View</h1>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    View Calendar
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href=<%= monthly_path %>>Monthly</a>
+    <a class="dropdown-item" href=<%= weekly_path %>>Weekly</a>
+  </div>
+</div>
+
+<%= calendar number_of_days: 1 do |date| %>
+  <%= @day %>
+  <div class="times" style="border: 1px solid black; width: 60px;">
+    <div class="time" style="border-bottom: 1px solid black">00:00</div>
+    <div class="time" style="border-bottom: 1px solid black">01:00</div>
+    <div class="time" style="border-bottom: 1px solid black">02:00</div>
+    <div class="time" style="border-bottom: 1px solid black">03:00</div>
+    <div class="time" style="border-bottom: 1px solid black">04:00</div>
+    <div class="time" style="border-bottom: 1px solid black">05:00</div>
+    <div class="time" style="border-bottom: 1px solid black">06:00</div>
+    <div class="time" style="border-bottom: 1px solid black">07:00</div>
+    <div class="time" style="border-bottom: 1px solid black">08:00</div>
+    <div class="time" style="border-bottom: 1px solid black">09:00</div>
+    <div class="time" style="border-bottom: 1px solid black">10:00</div>
+    <div class="time" style="border-bottom: 1px solid black">11:00</div>
+    <div class="time" style="border-bottom: 1px solid black">12:00</div>
+    <div class="time" style="border-bottom: 1px solid black">13:00</div>
+    <div class="time" style="border-bottom: 1px solid black">14:00</div>
+    <div class="time" style="border-bottom: 1px solid black">15:00</div>
+    <div class="time" style="border-bottom: 1px solid black">16:00</div>
+    <div class="time" style="border-bottom: 1px solid black">17:00</div>
+    <div class="time" style="border-bottom: 1px solid black">18:00</div>
+    <div class="time" style="border-bottom: 1px solid black">19:00</div>
+    <div class="time" style="border-bottom: 1px solid black">20:00</div>
+    <div class="time" style="border-bottom: 1px solid black">21:00</div>
+    <div class="time" style="border-bottom: 1px solid black">22:00</div>
+    <div class="time" style="border-bottom: 1px solid black">23:00</div>
+    <div class="time" style="border-bottom: 1px solid black">24:00</div>
+  </div>
+<% end %>
