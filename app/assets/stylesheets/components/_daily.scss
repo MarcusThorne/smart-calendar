@@ -1,0 +1,24 @@
+.time {
+  display: flex;
+  flex-direction: column;
+}
+
+#times {
+  border: 1px solid black;
+  width: 50px;
+  text-align: center;
+  padding-top: 16px;
+}
+
+.events {
+  border: 1px solid black;
+}
+
+#daily-card {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.simple-calendar {
+  width: 95%;
+}

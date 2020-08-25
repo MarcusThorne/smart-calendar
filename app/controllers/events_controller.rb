@@ -9,16 +9,16 @@ class EventsController < ApplicationController
 
   def daily
     @day = params[:start_date]
-  end
- 
-  def home
-    @events = Event.all
+    @events = []
+    @events = Event.where(user_id: current_user.id, end_date: @day)
+    @events = [] if @events.nil?
   end
 
   def show
   end
 
   def new
+    @date = params[:date]
     @event = Event.new
   end
 
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
     @event = Event.new(events_params)
     @event.user = current_user
     if @event.save!
-      redirect_to event_path(@event)
+      redirect_to "/?start_date=#{params[:event][:end_date]}"
     else
       render 'new'
     end
@@ -37,7 +37,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(events_params)
-      redirect_to event_path(@event)
+      redirect_to root_path
     else
       render 'edit'
     end
