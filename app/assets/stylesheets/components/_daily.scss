@@ -20,6 +20,15 @@
   width: 80%;
 }
 
+.travel_time {
+  border: 1px solid black;
+  background-color: blue;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 80%!important;
+}
+
 #daily-card {
   display: flex;
   justify-content: space-evenly;
