@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   end
 
   def daily
-    @day = params[:start_date]
+    @day = params[:start_date] || Date.today
     @events = []
     @events = Event.where(user_id: current_user.id, end_date: @day)
     @events = [] if @events.nil?

@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container" style="margin-bottom: 50px;">
   <%= simple_form_for @event do |f| %>
+    <%= f.input :end_date, as: :hidden, input_html: { value: @date } %>
     <%= f.input :name %>
     <%= f.input :start_time %>
     <%= f.input :start_date %>
     <%= f.input :end_time %>
-    <%= f.input :end_date %>
     <%= f.input :previous_location %>
     <%= f.input :event_location %>
     <%= f.input :travel_type, :collection => ["car", "pedestrian"]  %>
