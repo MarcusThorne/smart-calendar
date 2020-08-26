@@ -1,15 +1,22 @@
 <div class="container">
   <%= simple_form_for @event do |f| %>
-    <%= f.hidden_field :end_date, value: @date %>
     <%= f.input :name %>
     <%= f.input :start_time %>
+    <%= f.input :start_date %>
     <%= f.input :end_time %>
+    <%= f.input :end_date %>
     <%= f.input :previous_location %>
     <%= f.input :event_location %>
+    <%= f.input :travel_type, :collection => ["car", "pedestrian"]  %>
+    <%= f.input :time_difference, :label =>"Travel time", input_html: {disabled: true, id: "time_difference", hidden: true } %>
+    <p id="time_difference_display"></p>
+    <button type="button" id="cal_time" class="mb-4">Calculate time</button>
+    <br />
+
     <%= f.input :category %>
-    <%= f.input :event_location %>
-    <%= f.input :travel_type %>
     <%= f.input :description %>
     <%= f.button :submit, class: 'btn btn-primary' %>
   <% end %>
 </div>
+
+
