@@ -10,7 +10,7 @@ const calTime = () => {
 
     let end = [ parseFloat(localStorage.end_lat), parseFloat(localStorage.end_lng) ]
 
-    let apiKey = "MqVrssETvvXEnWpP6FoDttvMbIHeYGsgvzA3iCmw8N0"
+    let apiKey = "2V60GMQ8Tw0MWm8u4gLYCjHN7qlq-q0keA5ETheYwiU"
 
     let newUrl = `https://router.hereapi.com/v8/routes?transportMode=${travelType}&origin=${start[0]},${start[1]}&destination=${end[0]},${end[1]}&return=summary&apiKey=${apiKey}`
 
