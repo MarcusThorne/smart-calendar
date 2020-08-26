@@ -6,27 +6,27 @@
 .times {
   text-align: center;
   display: flex;
-  height: 2400px;
+  height: 4800px;
   position: relative;
   margin-bottom: -0px;
 }
 
 .event {
-  border: 1px solid black;
-  background-color: green;
+  background-color: rgb(32, 165, 83);
   display: inline-block;
   position: absolute;
   right: 0;
   width: 80%;
+  border-radius: 0 0 14px 14px;
 }
 
 .travel_time {
-  border: 1px solid black;
-  background-color: blue;
+  background-color: rgb(88, 196, 129);
   display: inline-block;
   position: absolute;
   right: 0;
   width: 80%!important;
+  border-radius: 14px 14px 0 0;
 }
 
 #daily-card {
@@ -56,4 +56,19 @@ p {
 
 .simple-calendar td {
   padding: 16px 4px!important;
+}
+
+.daily-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 16px;
+  font-family: 'Hind', sans-serif;
+  position: relative;
+  padding: 0;
+}
+
+.dropdown {
+  position: absolute;
+  top: 75%;
+  right: -1%;
 }

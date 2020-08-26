@@ -1,22 +1,35 @@
-<h1>Daily View</h1>
+<div class="daily-header">
+  <% if @day == Date.today %>
+    <h1 style="font-family: 'Yanone Kaffeesatz', sans-serif; color: grey;">TODAY</h1>
+  <% else %>
+    <h1 style="font-family: 'Yanone Kaffeesatz', sans-serif; color: grey;">DAILY VIEW</h1>
+  <% end %>
 
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    View Calendar
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href=<%= monthly_path %>>Monthly</a>
-    <a class="dropdown-item" href=<%= weekly_path %>>Weekly</a>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      View Calendar
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href=<%= monthly_path %>>Monthly</a>
+      <a class="dropdown-item" href=<%= weekly_path %>>Weekly</a>
+    </div>
   </div>
 </div>
 
-<div id="daily-card">
+<div id="daily-card" style="margin-bottom: 44px;">
   <%= calendar number_of_days: 1 do |date| %>
     <div class="times">
       <% array = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"] %>
       <div class="times-display">
         <% array.each do |time| %>
           <p class="time"><%= time %></p>
+          <% if time != "24:00" %>
+            <p>-</p>
+            <p>-</p>
+            <p>-</p>
+            <p>-</p>
+            <p>-</p>
+          <% end %>
         <% end %>
       </div>
 
@@ -24,26 +37,25 @@
         <% @events.each do |event| %>
           <% time_event = ((event.end_time - event.start_time) / 60) / 60 %>
           <% beginning_of_day_difference = ((event.start_time - event.start_time.beginning_of_day) / 60) / 60 %>
-          <% time_travel = event.time_difference / (1000 * 60 * 60)  %>
+          <% time_travel = (event.time_difference / (1000 * 60 * 60)) %>
           <% time_travel_percentage = (time_travel / 24) * 100 %>
           <% minus_travel = event.time_difference %>
           
-            <div class="travel_time" style="height: <%= time_travel_percentage %>%; top: <%= ((beginning_of_day_difference / 24) * 100) - time_travel_percentage %>%; width: 200px;">
-            </div>
-            
-            <div class="event" style="height: <%= ((time_event / 24) * 100) %>%; top: <%= ((beginning_of_day_difference / 24) * 100) %>%;">
-              <div class="travel_time_container">
-                <%= time_travel %>
-              </div>
-              <%= link_to event_path(event) do %>
-                <%= event.name %>
-              <% end %>
-            </div>
+          <div class="travel_time" style="height: <%= time_travel_percentage %>%; top: <%= ((beginning_of_day_difference / 24) * 100) - time_travel_percentage %>%; width: 200px;">
+            <p style="color: white; margin-top: <%= time_travel_percentage * 4 %>%;"><i class="far fa-clock"></i> <%= (time_travel * 100).round(2)%> Minutes Travel Time</p>
+          </div>
+          
+          <div class="event" style="padding: 8px; height: <%= ((time_event / 24) * 100) %>%; top: <%= ((beginning_of_day_difference / 24) * 100) %>%;">
+            <%= link_to event_path(event) do %>
+              <h4 style="color: white; padding-top: <%= ((time_event / 24) * 100) / 2 %>%;"><%= event.name %></h4>
+              <p style="color: white; padding-top: <%= ((time_event / 24) * 100) / 2 %>%;"><%= event.category %></p>
+              <p style="color: white; padding-top: <%= ((time_event / 24) * 100) / 2 %>%;"><i class="fas fa-location-arrow"></i> <%= event.event_location %></p>
+              <p style="font-size: 12px; color: white; padding-top: <%= ((time_event / 24) * 100) / 2 %>%;"><i class="fas fa-align-justify"></i> <%= event.description %></p>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>
   <% end %>
-  <div class="footer">
-    <%= link_to "new", new_event_path(date: @day), class:"btn btn-primary"%>
-  </div>
+  
 </div>
