@@ -13,5 +13,8 @@
 <%= month_calendar do |date| %>
   <%= link_to root_path(start_date: date) do %>
     <p><%= date %></p>
+    <%# <% Event.where(user_id: current_user.id, end_date: date).each do |event| %>
+      <%# <%= event.name %>
+    <%# <% end %>
   <% end %>
 <% end %>
