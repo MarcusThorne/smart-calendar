@@ -3,15 +3,21 @@
   flex-direction: column;
 }
 
-#times {
-  border: 1px solid black;
-  width: 50px;
+.times {
   text-align: center;
-  padding-top: 16px;
+  display: flex;
+  height: 2400px;
+  position: relative;
+  margin-bottom: -0px;
 }
 
-.events {
+.event {
   border: 1px solid black;
+  background-color: green;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 80%;
 }
 
 #daily-card {
@@ -21,4 +27,24 @@
 
 .simple-calendar {
   width: 95%;
+  margin-bottom: 32px;
+}
+
+.times-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: -12px 0;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.events-container {
+  margin-top: 50px;
+}
+
+.simple-calendar td {
+  padding: 16px 4px!important;
 }

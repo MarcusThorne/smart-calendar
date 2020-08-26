@@ -12,25 +12,28 @@
 
 <div id="daily-card">
   <%= calendar number_of_days: 1 do |date| %>
-    <%= @day %>
-    <div style="justify-content: space-between; display: flex;">
-      <div id="times">
-        <% array = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"] %>
+    <div class="times">
+      <% array = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"] %>
+      <div class="times-display">
         <% array.each do |time| %>
           <p class="time"><%= time %></p>
         <% end %>
       </div>
-      <div >
+
+      <div class="events-container">
         <% @events.each do |event| %>
-          <%= link_to event_path(event) do %>
-            <%= event.name %>
-          <% end %>
+          <% time_difference = ((event.end_time - event.start_time) / 60) / 60 %>
+          <% beginning_of_day_difference = ((event.start_time - event.start_time.beginning_of_day) / 60) / 60 %>
+          <div class="event" style="height: <%= (time_difference / 24) * 100 %>%; top: <%= (beginning_of_day_difference / 24) * 100 %>%;">
+            <%= link_to event_path(event) do %>
+              <%= event.name %>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>
   <% end %>
-</div>
-
-<div class="container">
+  <div class="footer">
   <%= link_to "new", new_event_path(date: @day), class:"btn btn-primary"%>
+</div>
 </div>
