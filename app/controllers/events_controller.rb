@@ -52,7 +52,7 @@ class EventsController < ApplicationController
 
   def events_params
     params.require(:event).permit(:previous_location, :event_location, :description, :name,
-      :category, :start_time, :end_time, :start_date, :end_date, :travel_type)
+      :category, :start_time, :end_time, :start_date, :end_date, :travel_type, :time_difference)
   end
 
   def set_event
