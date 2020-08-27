@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  
+
   def weekly
   end
 
-  def monthly 
+  def monthly
   end
 
   def daily
@@ -34,7 +34,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @date = params[:date]
+    @date = @event.end_date
     @hide_footer = true
   end
 
