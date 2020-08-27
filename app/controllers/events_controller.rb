@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  
+
   def weekly
   end
 
-  def monthly 
+  def monthly
   end
 
   def daily
@@ -26,7 +26,9 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(events_params)
     @event.user = current_user
+    @event.start_date = @event.end_date if @event.start_date.nil?
     if @event.save
+      EventJob.set(wait_until: @event.start_date_time).perform_later(@event.id)
       redirect_to "/?start_date=#{params[:event][:end_date]}"
     else
       render 'new'
