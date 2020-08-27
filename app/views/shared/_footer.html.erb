@@ -1,3 +1,4 @@
 <div class="footer">
-  <%= link_to "new", new_event_path(date: @day), class:"btn btn-primary"%>
+  <%= link_to "Back", weekly_path, class:"btn btn-danger back_button", style:"text-align: center;"%>
+  <%= link_to "Add an Event", new_event_path(date: @day), class:"btn new_event_button"%>
 </div>

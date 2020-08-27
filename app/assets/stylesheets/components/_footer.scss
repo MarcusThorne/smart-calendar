@@ -1,8 +1,32 @@
 .footer {
-  position: fixed;
-  bottom: 0px;
-  background-color: white;
+  background-color: #F5F5F5; 
+  position:fixed; 
+  z-index: 5; 
   width: 100%;
-  z-index: 1;
-  box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.1);
-} 
+  height: 80px;
+  bottom: 0;
+  padding: 24px;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+}
+
+.back_button {
+  width: 20%;
+  height: 30px;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #EF476F;
+  padding: 2px 1px;
+  margin-top: 2px;
+}
+
+.new_event_button {
+  width: 50%;
+  height: 40px;
+  border-radius: 12px;
+  color: white;
+  margin-top: -4px;
+  background-color: #AFE7AE;
+  padding-top: 7px;
+}
