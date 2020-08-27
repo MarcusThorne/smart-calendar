@@ -1,6 +1,7 @@
-<h1>Monthly View</h1>
+<div class="header">
+  <h1>Monthly View</h1>
 
-<div class="">
+  <div class="drop-down">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     View Calendar
   </button>
@@ -8,13 +9,16 @@
     <a class="dropdown-item" href=<%= root_path %>>Daily</a>
     <a class="dropdown-item" href=<%= weekly_path %>>Weekly</a>
   </div>
+  </div>
 </div>
 
-<%= month_calendar do |date| %>
-  <%= link_to root_path(start_date: date) do %>
-    <p><%= date %></p>
-    <%# <% Event.where(user_id: current_user.id, end_date: date).each do |event| %>
-      <%# <%= event.name %>
-    <%# <% end %>
+<div style="display: flex; justify-content: space-around; ">
+  <%= month_calendar do |date| %>
+    <%= link_to root_path(start_date: date) do %>
+      <p><%= date %></p>
+      <%# <% Event.where(user_id: current_user.id, end_date: date).each do |event| %>
+        <%# <%= event.name %>
+      <%# <% end %>
+    <% end %>
   <% end %>
-<% end %>
+</div>

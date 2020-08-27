@@ -1,0 +1,43 @@
+.next_button {
+  position: fixed;
+  font-size: 30px;
+  right: 5%;
+  bottom: 11%;
+  color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  &:hover {
+    font-size: 36px;
+    color: rgba(0, 0, 0, 0.75);
+  }
+}
+
+.previous_button {
+  position: fixed;
+  font-size: 30px;
+  left: 5%;
+  transform: rotate(180deg);
+  bottom: 11%;
+  color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  &:hover {
+    font-size: 36px;
+    color: rgba(0, 0, 0, 0.75);
+  }
+}
+
+.calendar-heading {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 95%;
+  margin-left: -10px;
+  bottom: 29px;
+  color: transparent;
+  z-index: 15;
+  font-size: 180%;
+  height: 12vh;
+}
+
+.calendar-heading > a {
+  color: transparent;
+}

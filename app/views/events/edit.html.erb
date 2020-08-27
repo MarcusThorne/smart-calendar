@@ -11,12 +11,13 @@
 
     <%= f.input :previous_location %>
     <%= f.input :event_location %>
-    <%= f.input :travel_type, :collection => ["car", "pedestrian"]  %>
-    <%= f.input :time_difference, :label =>"Travel time", input_html: { id: "time_difference", hidden: true } %>
-    
-    <p id="time_difference_display"></p>
-    <button type="button" id="cal_time" class="mb-4">Calculate time</button>
-    <br />
+   
+    <div style="display: flex; justify-content: space-around;">
+      <%= f.input :travel_type, :collection => ["Car", "Pedestrian"]  %>
+      <%= f.input :time_difference, as: :hidden, input_html: { id: "time_difference", hidden: true } %>
+      <p style="margin-top: 36px; margin-left: -86px;" id="time_difference_display"></p>
+      <button style="border: none; border-radius: 14px; height: 42px; margin-top: 28px; width: 170px; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);" type="button" id="cal_time">Calculate time</button>
+    </div>
     
     <%= f.input :description %>
   </div>
