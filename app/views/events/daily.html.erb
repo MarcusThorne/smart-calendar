@@ -41,13 +41,13 @@
           <% time_travel_percentage = (time_travel / 24) * 100 %>
           <% minus_travel = event.time_difference %>
           
-          <div class="travel_time" style="height: <%= time_travel_percentage %>%; top: <%= ((beginning_of_day_difference / 24) * 100) - time_travel_percentage %>%; width: 200px;">
-            <% unless time_travel_percentage < 0.6 %>
-              <p style="color: white;"><i class="far fa-clock"></i> <%= (time_travel * 60).round%> Minutes Travel Time</p>
-            <% end %>
-          </div>
-          
           <%= link_to event_path(event) do %>
+            <div class="travel_time" style="height: <%= time_travel_percentage %>%; top: <%= ((beginning_of_day_difference / 24) * 100) - time_travel_percentage %>%; width: 200px;">
+              <% unless time_travel_percentage < 0.6 %>
+                <p style="color: white;"><i class="far fa-clock"></i> <%= (time_travel * 60).round%> Minutes Travel Time</p>
+              <% end %>
+            </div>
+          
             <div class="event" style="overflow: hidden; padding: 8px; height: <%= ((time_event / 24) * 100) %>%; top: <%= ((beginning_of_day_difference / 24) * 100) %>%;">
               <h4 style="color: white;"><%= event.name unless ((time_event / 24) * 100) < 0.7 %></h4>
               <% unless ((time_event / 24) * 100) < 2 %>
