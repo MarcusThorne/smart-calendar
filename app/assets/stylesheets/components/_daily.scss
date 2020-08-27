@@ -18,15 +18,24 @@
   right: 0;
   width: 80%;
   border-radius: 0 0 14px 14px;
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
 }
 
 .travel_time {
   background-color: rgb(88, 196, 129);
-  display: inline-block;
   position: absolute;
   right: 0;
   width: 80%!important;
   border-radius: 14px 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
 }
 
 #daily-card {
