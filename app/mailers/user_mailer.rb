@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def welcome
     @user = params[:user] # Instance variable => available in view
-    mail(to: @user.email, subject: 'Your event has been created')
+    mail(to: @user.email, subject: 'LEAVE NOW or DIE')
     # This will render a view in `app/views/user_mailer`!
   end
 end
