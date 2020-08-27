@@ -1,11 +1,11 @@
-<div class="daily-header">
+<div class="header">
   <% if @day == Date.today %>
-    <h1 style="font-family: 'Yanone Kaffeesatz', sans-serif; color: grey;">TODAY</h1>
+    <h1>TODAY</h1>
   <% else %>
-    <h1 style="font-family: 'Yanone Kaffeesatz', sans-serif; color: grey;">DAILY VIEW</h1>
+    <h1>DAILY VIEW</h1>
   <% end %>
 
-  <div class="dropdown">
+  <div class="drop-down">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       View Calendar
     </button>
@@ -49,9 +49,14 @@
             </div>
           
             <div class="event" style="overflow: hidden; padding: 8px; height: <%= ((time_event / 24) * 100) %>%; top: <%= ((beginning_of_day_difference / 24) * 100) %>%;">
-              <h4 style="color: white;"><%= event.name unless ((time_event / 24) * 100) < 0.7 %></h4>
+              <% unless ((time_event / 24) * 100) < 0.7 %>
+                <h4 style="color: white;"> <i class="far fa-calendar"></i> <%= event.name %> </h4>
+              <% end %>
               <% unless ((time_event / 24) * 100) < 2 %>
                 <p style="color: white;"> <i class="fas fa-location-arrow"></i> <%= event.event_location %></p>
+              <% end %>
+              <% unless ((time_event / 24) * 100) < 4 %>
+                <p style="color: white;"> <i class="fas fa-align-justify"></i> <%= event.description %></p>
               <% end %>
             </div>
           <% end %>
@@ -60,4 +65,7 @@
     </div>
   <% end %>
   
+  <i class="next_button fas fa-arrow-circle-right"></i>
+  <i class="previous_button fas fa-arrow-circle-right"></i>
+
 </div>
