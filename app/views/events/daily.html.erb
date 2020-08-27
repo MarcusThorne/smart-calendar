@@ -47,15 +47,15 @@
             <% end %>
           </div>
           
-          <div class="event" style="overflow: hidden; padding: 8px; height: <%= ((time_event / 24) * 100) %>%; top: <%= ((beginning_of_day_difference / 24) * 100) %>%;">
-            <%= link_to event_path(event) do %>
+          <%= link_to event_path(event) do %>
+            <div class="event" style="overflow: hidden; padding: 8px; height: <%= ((time_event / 24) * 100) %>%; top: <%= ((beginning_of_day_difference / 24) * 100) %>%;">
               <h4 style="color: white;"><%= event.name unless ((time_event / 24) * 100) < 0.7 %></h4>
               <% unless ((time_event / 24) * 100) < 2 %>
                 <p style="color: white;"> <i class="fas fa-location-arrow"></i> <%= event.event_location %></p>
               <% end %>
-            <% end %>
-          </div>
-        <% end %> 
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   <% end %>
