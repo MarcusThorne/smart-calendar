@@ -8,7 +8,14 @@
   <div>
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <i class="profile_icon fas fa-user-circle" style="font-size: 35px; color: white; text-shadow: 1px 1px rgba(0, 0, 0, 0.1)"></i>
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn"><i class="profile_icon fas fa-user-circle" style="font-size: 35px; color: white; text-shadow: 1px 1px rgba(0, 0, 0, 0.1)"></i></button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
