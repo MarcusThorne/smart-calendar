@@ -20,12 +20,13 @@ class EventsController < ApplicationController
   def new
     @date = params[:date]
     @event = Event.new
+    @hide_footer = true
   end
 
   def create
     @event = Event.new(events_params)
     @event.user = current_user
-    if @event.save!
+    if @event.save
       redirect_to "/?start_date=#{params[:event][:end_date]}"
     else
       render 'new'
@@ -33,11 +34,13 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @date = params[:date]
+    @hide_footer = true
   end
 
   def update
     if @event.update(events_params)
-      redirect_to root_path
+      redirect_to "/?start_date=#{params[:event][:end_date]}"
     else
       render 'edit'
     end

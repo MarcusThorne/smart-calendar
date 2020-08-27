@@ -1,5 +1,5 @@
-<div class="container" style="margin-bottom: 50px;">
-  <%= simple_form_for @event do |f| %>
+<%= simple_form_for @event do |f| %>
+  <div class="container" style="margin-bottom: 100px;">
     <%= f.input :end_date, as: :hidden, input_html: { value: @date } %>
     <%= f.input :name %>
     <%= f.input :category %>
@@ -19,8 +19,11 @@
     <br />
     
     <%= f.input :description %>
-    <%= f.button :submit, class: 'btn create_event_button' %>
-  <% end %>
-</div>
+  </div>
 
+  <div class="footer">
+    <%= link_to "Back", weekly_path, class:"btn btn-danger back_button", style:"text-align: center;"%>
+    <%= f.button :submit, class:"btn new_event_button" %>
+  </div>
+<% end %>
 
