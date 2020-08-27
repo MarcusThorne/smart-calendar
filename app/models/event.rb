@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :user
   validates :time_difference, presence: true
+
   # validate :cannot_have_conflict
   validates :start_time, :end_time, :overlap => {:scope => ["user_id", "end_date"]}
 
@@ -13,4 +14,8 @@ class Event < ApplicationRecord
   #     errors.add(:start_time, "Not possible Fool, check the time lol")
   #   end
   # end
+
+  def start_date_time
+   DateTime.new(start_date.year, start_date.month, start_date.day, start_time.hour, start_time.min, start_time.sec, start_time.zone)
+ end
 end

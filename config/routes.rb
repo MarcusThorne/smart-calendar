@@ -9,7 +9,5 @@ Rails.application.routes.draw do
   get "/monthly", to: "events#monthly"
 
   require "sidekiq/web"
-  authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
-  end
 end
