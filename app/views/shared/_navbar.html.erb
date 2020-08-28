@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="display: flex; justify-content: space-between;">
   <div>
-    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= link_to daily_path, class: "navbar-brand" do %>
       <%= image_tag "smart_calendar.png", style:"width: 100px;" %>
     <% end %>
   </div>
@@ -8,12 +8,13 @@
   <div>
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-        <i class="profile_icon fas fa-user-circle" style="font-size: 35px; color: white; text-shadow: 1px 1px rgba(0, 0, 0, 0.1)"></i>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+
+        <div class="drop-down" style="position: relative;">
+          <i class="profile_icon fas fa-user-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 35px; color: white; text-shadow: 1px 1px rgba(0, 0, 0, 0.1)"></i>
+          <div style="position: absolute !important; padding: 0; font-size: 16px; text-align: right; min-width: auto;" class="no-border dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+          </div>
+        </div>
       <% end %>
     </ul>
   </div>

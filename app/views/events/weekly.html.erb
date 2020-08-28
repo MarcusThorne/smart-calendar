@@ -5,7 +5,7 @@
     View Calendar
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href=<%= root_path %>>Daily</a>
+    <a class="dropdown-item" href=<%= daily_path %>>Daily</a>
     <a class="dropdown-item" href=<%= monthly_path %>>Monthly</a>
   </div>
 </div>
@@ -15,3 +15,8 @@
     <p><%= date %></p>
   <% end %>
 <% end %>
+
+<div class="footer">
+  <%= link_to "Back", daily_path, class:"btn btn-danger back_button", style:"text-align: center;"%>
+  <%= link_to "Add an Event", new_event_path(date: @day), class:"btn new_event_button"%>
+</div>

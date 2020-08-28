@@ -7,7 +7,13 @@ class UserMailer < ApplicationMailer
   #
   def welcome
     @user = params[:user] # Instance variable => available in view
-    mail(to: @user.email, subject: 'LEAVE NOW or DIE')
+    mail(to: @user.email, subject: 'Welcome to Smart Calendar')
     # This will render a view in `app/views/user_mailer`!
   end
+
+  def event
+    @user = params[:user] # Instance variable => available in view
+    mail(to: @user.email, subject: 'LEAVE NOW or DIE')
+  end
+
 end

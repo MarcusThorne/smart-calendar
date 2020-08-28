@@ -20,16 +20,23 @@ class EventsController < ApplicationController
   def new
     @date = params[:date]
     @event = Event.new
-    @hide_footer = true
   end
+
+  # def secondnew
+  #   @date = params[:date]
+  #   @event = Event.new
+  # end
 
   def create
     @event = Event.new(events_params)
     @event.user = current_user
+    if @event.end_date.nil?
+      @event.end_date = @event.start_date
+    end
     @event.start_date = @event.end_date if @event.start_date.nil?
     if @event.save
       EventJob.set(wait_until: @event.start_date_time).perform_later(@event.id)
-      redirect_to "/?start_date=#{params[:event][:end_date]}"
+      redirect_to "/daily/?start_date=#{params[:event][:end_date]}"
     else
       render 'new'
     end
@@ -37,12 +44,11 @@ class EventsController < ApplicationController
 
   def edit
     @date = @event.end_date
-    @hide_footer = true
   end
 
   def update
     if @event.update(events_params)
-      redirect_to "/?start_date=#{params[:event][:end_date]}"
+      redirect_to "/daily/?start_date=#{params[:event][:end_date]}"
     else
       render 'edit'
     end
@@ -50,7 +56,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to root_path
+    redirect_to daily_path
   end
 
   private
