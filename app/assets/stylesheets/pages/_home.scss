@@ -1,4 +1,23 @@
 // Specific CSS for your home-page
 body {
-  background-color: white;
+  background-color: rgba(100,100,100,0.60);
+}
+
+.button-width {
+  width: 30%;
+
+}
+
+.buttons {
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 7px 2px 20px 1px rgba(0,0,0,0.75);
+
+}
+
+.text {
+  width: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
 }
