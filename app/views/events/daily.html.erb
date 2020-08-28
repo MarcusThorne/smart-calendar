@@ -9,7 +9,7 @@
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       View Calendar
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-menu dropdown-menu-right" style="width: " aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item" href=<%= monthly_path %>>Monthly</a>
       <a class="dropdown-item" href=<%= weekly_path %>>Weekly</a>
     </div>
@@ -68,4 +68,9 @@
   <i class="next_button fas fa-arrow-circle-right"></i>
   <i class="previous_button fas fa-arrow-circle-right"></i>
 
+</div>
+
+<div class="footer">
+  <%= link_to "Back", monthly_path, class:"btn btn-danger back_button", style:"text-align: center;"%>
+  <%= link_to "Add an Event", new_event_path(date: @day), class:"btn new_event_button"%>
 </div>
