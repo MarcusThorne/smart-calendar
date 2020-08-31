@@ -1,11 +1,20 @@
 <div class="container">
-      <h3>Event</h3>
+  <h3>Event</h3>
 
-      <h4><%= @event.name %></h4>
+  <h4><%= @event.name %></h4>
 
-      <%= link_to "Edit the description", edit_event_path(@event), class: "btn btn-info" %>
+  <%= link_to event_path(@event), method: :delete do %>
+    <i class="fas fa-trash"></i>
+  <% end %>
 
-      <%= link_to "home", root_path  %>
+  <div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-      <%= link_to "Delete", event_path(@event), method: :delete %>
+</div>
+
+<div class="footer">
+  <%= link_to "Back", daily_path, class:"btn btn-danger back_button", style:"text-align: center;"%>
+  <%= link_to "Edit the description", edit_event_path(@event), class: "btn edit_event_button" %>
 </div>

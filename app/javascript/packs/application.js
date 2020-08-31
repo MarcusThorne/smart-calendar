@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 import { findLocation1, findLocation2 } from '../components/findLocation'
 import { calTime } from '../components/calTime'
+import { initMapbox } from '../components/mapBox';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -33,7 +34,11 @@ import { calTime } from '../components/calTime'
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  findLocation1();
-  findLocation2();
+  const eventForm = document.querySelector("#new_event");
+  if (eventForm) { 
+    findLocation1();
+    findLocation2();
+  }
   calTime();
+  initMapbox();
 });
