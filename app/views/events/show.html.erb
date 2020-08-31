@@ -1,20 +1,27 @@
-<div class="container">
-  <h3>Event</h3>
-
+<div class="show-card <%= @event.event_time_class %>">
   <h4><%= @event.name %></h4>
+  <br>
+  <p><%= @event.event_location %></p>
+  <div class="d-flex justify-content-around mr-5 ml-5">
+    <p><%= @event.start_time.strftime("%I:%M %P") %></p>
+    <p>-</p>
+    <p><%= @event.end_time.strftime("%I:%M %P") %></p>
+  </div>
+  <br>
+  <p style="font-size: 14px"><%= @event.description %></p>
 
   <%= link_to event_path(@event), method: :delete do %>
-    <i class="fas fa-trash"></i>
+    <i class="fas fa-trash" style="position: fixed; bottom: 11%; z-index: 10; right: 16px; font-size: 40px; color: rgba(0, 0, 0, 0.3);"></i>
   <% end %>
+</div>
 
-  <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
+<div id="map"
+  style="width: 100vw; height: 400px; margin-bottom: 80px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
 <div class="footer">
   <%= link_to "Back", daily_path, class:"btn btn-danger back_button", style:"text-align: center;"%>
-  <%= link_to "Edit the description", edit_event_path(@event), class: "btn edit_event_button" %>
+  <%= link_to "Edit Event", edit_event_path(@event), class: "btn edit_event_button" %>
 </div>

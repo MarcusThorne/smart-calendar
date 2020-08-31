@@ -24,11 +24,9 @@
         <% array.each do |time| %>
           <p class="time"><%= time %></p>
           <% if time != "24:00" %>
-            <p>-</p>
-            <p>-</p>
-            <p>-</p>
-            <p>-</p>
-            <p>-</p>
+            <% 5.times do %>
+              <div class="line"></div>
+            <% end %>
           <% end %>
         <% end %>
       </div>
@@ -55,7 +53,7 @@
               <% unless ((time_event / 24) * 100) < 2 %>
                 <p style="color: white;"> <i class="fas fa-location-arrow"></i> <%= event.event_location %></p>
               <% end %>
-              <% unless ((time_event / 24) * 100) < 4 %>
+              <% unless ((time_event / 24) * 100) < 5 %>
                 <p style="color: white;"> <i class="fas fa-align-justify"></i> <%= event.description %></p>
               <% end %>
             </div>

@@ -35,7 +35,7 @@ class Event < ApplicationRecord
      end
   end
   
-  def event_time_class 
+  def event_time_class
     if category == "Workout"
       "blue-event"
     elsif category == "Work"
@@ -68,5 +68,4 @@ class Event < ApplicationRecord
       end
     end
   end
-
 end
