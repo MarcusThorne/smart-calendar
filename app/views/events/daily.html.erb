@@ -42,13 +42,13 @@
           <% minus_travel = event.time_difference %>
           
           <%= link_to event_path(event) do %>
-            <div class="travel_time" style="height: <%= time_travel_percentage %>%; top: <%= ((beginning_of_day_difference / 24) * 100) - time_travel_percentage %>%; width: 200px;">
+            <div class="travel_time <%= event.travel_time_class %>" style="height: <%= time_travel_percentage %>%; top: <%= ((beginning_of_day_difference / 24) * 100) - time_travel_percentage %>%; width: 200px;">
               <% unless time_travel_percentage < 0.6 %>
-                <p style="color: white;"><i class="far fa-clock"></i> <%= (time_travel * 60).round%> Minutes Travel Time</p>
+                <p style="color: white;"><i class="far fa-clock"></i> <%= (time_travel * 60).round %> Minutes Travel Time</p>
               <% end %>
             </div>
           
-            <div class="event" style="overflow: hidden; padding: 8px; height: <%= ((time_event / 24) * 100) %>%; top: <%= ((beginning_of_day_difference / 24) * 100) %>%;">
+            <div class="event <%= event.event_time_class %> %" style="overflow: hidden; padding: 8px; height: <%= ((time_event / 24) * 100) %>%; top: <%= ((beginning_of_day_difference / 24) * 100) %>%;">
               <% unless ((time_event / 24) * 100) < 0.7 %>
                 <h4 style="color: white;"> <i class="far fa-calendar"></i> <%= event.name %> </h4>
               <% end %>
@@ -72,5 +72,5 @@
 
 <div class="footer">
   <%= link_to "Back", monthly_path, class:"btn btn-danger back_button", style:"text-align: center;"%>
-  <%= link_to "Add an Event", new_event_path(date: @day), class:"btn new_event_button"%>
+  <%= link_to "Add an Event", new_event_path(date: @day), class:"btn create_event_button"%>
 </div>

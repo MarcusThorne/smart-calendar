@@ -21,12 +21,32 @@
   margin-top: 2px;
 }
 
-.new_event_button {
+.create_event_button {
   width: 50%;
   height: 40px;
   border-radius: 12px;
   color: white;
   margin-top: -4px;
   background-color: #AFE7AE;
+  padding-top: 7px;
+}
+
+.edit_event_button {
+  width: 50%;
+  height: 40px;
+  border-radius: 12px;
+  color: white;
+  margin-top: -4px;
+  background-color: #f8cd4d;
+  padding-top: 7px;
+}
+
+.new_event_button {
+  width: 50%;
+  height: 40px;
+  border-radius: 12px;
+  color: white;
+  margin-top: -4px;
+  background-color: #4dc2f8;
   padding-top: 7px;
 }

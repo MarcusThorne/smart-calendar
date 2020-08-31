@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_100847) do
+ActiveRecord::Schema.define(version: 2020_08_31_111700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 2020_08_31_100847) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "start_lng"
+    t.float "start_lat"
+    t.float "end_lng"
+    t.float "end_lat"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
