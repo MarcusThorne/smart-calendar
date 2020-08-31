@@ -13,4 +13,9 @@ class User < ApplicationRecord
   def send_welcome_email
     UserMailer.with(user: self).welcome.deliver_now
   end
+
+  def change
+    add_column :users, :admin, :boolean, null: false, default: false
+  end
+
 end
