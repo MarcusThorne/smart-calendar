@@ -36,7 +36,7 @@ class EventsController < ApplicationController
     @event.start_date = @event.end_date if @event.start_date.nil?
     if @event.save
       EventJob.set(wait_until: @event.start_date_time.ago(@event.time_difference/1000)).perform_later(@event.id)
-      redirect_to "/daily/?start_date=#{params[:event][:end_date]}"
+      redirect_to "/daily/?start_date=#{@event.end_date}"
     else
       render 'new'
     end
