@@ -1,17 +1,17 @@
 // Specific CSS for your home-page
 .button-width {
-  width: 30%;
+  width: 200px;
 }
 
 .buttons {
   border-radius: 20px;
-  background-color: #fff;
-  box-shadow: 7px 2px 20px 1px rgba(0,0,0,0.75);
+  background-color: #afe7ae;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  color: white;
 }
 
 .text {
+  text-align: center;
+  margin: 40px 0;
   width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
