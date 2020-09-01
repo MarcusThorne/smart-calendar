@@ -34,7 +34,7 @@
         <% end %>
       </div>
 
-      <div class="events-container">
+      <div class="events-container"> 
         <% @events.each do |event| %>
           <% time_event = ((event.end_time - event.start_time) / 60) / 60 %>
           <% beginning_of_day_difference = ((event.start_time - event.start_time.beginning_of_day) / 60) / 60 %>

@@ -1,13 +1,13 @@
 .show-card {
   padding: 16px;
   box-shadow: -1px -1px 6px rgba(0, 0, 0, 0.1);
-  color: rgb(68, 68, 68);
+  color: rgb(0, 0, 0);
   font-family: 'Hind', sans-serif;
   position: absolute;
   bottom: 80px;
   text-align: center;
   width: 100%;
-  border-radius: 24px 16px 0 0;
+  border-radius: 24px 24px 0 0;
   background-color: rgba(241, 241, 241, 0.836) !important;
   h3 {
     font-weight: bold;
@@ -41,7 +41,7 @@
   position: absolute;
   top: 70px;
   font-family: 'Titillium Web', sans-serif;
-  background-color: rgba(255, 255, 255, 0.904);
+  background-color: rgba(255, 255, 255, 1);
   z-index: 30;
   border-radius: 0 0 24px 16px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
