@@ -34,8 +34,8 @@ import { initWeather } from '../components/weather';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  const eventForm = document.querySelector("#new_event");
-  if (eventForm) { 
+  const eventForm = document.querySelector(".event_form");
+  if (eventForm) {
     findLocation1();
     findLocation2();
   }
