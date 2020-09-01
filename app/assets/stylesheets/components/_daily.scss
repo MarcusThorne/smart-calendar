@@ -19,6 +19,7 @@ p {
 .time {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 .times {
@@ -34,4 +35,22 @@ p {
   flex-direction: column;
   justify-content: space-between;
   margin: -12px 0;
+  width: 100%;
+}
+
+.line {
+  border: solid 1px rgb(255, 255, 255);
+  width: 100%;
+}
+
+.today {
+  background-color: rgb(255, 242, 221)!important;
+}
+
+.future {
+  background-color: rgb(213, 238, 255)!important;
+}
+
+.past {
+  background-color: rgb(234, 255, 234)!important;
 }

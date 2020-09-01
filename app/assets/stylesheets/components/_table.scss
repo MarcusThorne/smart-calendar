@@ -1,5 +1,11 @@
 .table {
-  height: 932px;
-  margin-top: 10px;
+  height: 70vh;
+  margin-top: 32px;
   margin-bottom: 92px;
+  width: 100vw;
+}
+
+.simple-calendar {
+  display: flex;
+  justify-content: space-around;
 }

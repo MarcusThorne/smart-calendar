@@ -1,22 +1,26 @@
-<h1>Weekly View</h1>
+<div class="header">
+  <h1>WEEKLY VIEW</h1>
 
-<div class="">
+  <div class="drop-down">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     View Calendar
   </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href=<%= daily_path %>>Daily</a>
     <a class="dropdown-item" href=<%= monthly_path %>>Monthly</a>
   </div>
+  </div>
 </div>
 
-<%= week_calendar number_of_weeks: 1 do |date| %>
-  <%= link_to root_path(start_date: date) do %>
-    <p><%= date %></p>
+<div style="display: flex; justify-content: space-around;">
+  <%= week_calendar number_of_weeks: 1 do |date| %>
+    <%= link_to root_path(start_date: date) do %>
+      <p style="color: black;"><%= date.day %></p>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
 <div class="footer">
   <%= link_to "Back", daily_path, class:"btn btn-danger back_button", style:"text-align: center;"%>
-  <%= link_to "Add an Event", new_event_path(date: @day), class:"btn create_event_button"%>
+  <%= link_to "Add Event", new_event_path(date: @day), class:"btn create_event_button"%>
 </div>
