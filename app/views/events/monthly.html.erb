@@ -23,6 +23,9 @@
   <% end %>
 </div>
 
+<i class="next_button fas fa-arrow-circle-right"></i>
+<i class="previous_button fas fa-arrow-circle-right"></i>
+
 <div class="footer">
   <%= link_to "Back", daily_path, class:"btn btn-danger back_button", style:"text-align: center;"%>
   <%= link_to "Add Event", new_event_path(date: @day), class:"btn create_event_button"%>
