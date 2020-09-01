@@ -1,14 +1,14 @@
 <div class="header">
-  <h1><%= t('date.month_names')[start_date.month] %></h1>
+  <h1><%= t('date.month_names')[start_date.month].upcase %></h1>
 
   <div class="drop-down">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    View Calendar
-  </button>
-  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href=<%= daily_path %>>Daily</a>
-    <a class="dropdown-item" href=<%= weekly_path %>>Weekly</a>
-  </div>
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      View Calendar
+    </button>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href=<%= daily_path %>>Daily</a>
+      <a class="dropdown-item" href=<%= weekly_path %>>Weekly</a>
+    </div>
   </div>
 </div>
 
