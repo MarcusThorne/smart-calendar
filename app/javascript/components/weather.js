@@ -10,14 +10,14 @@ const findLocation = (query, results) => {
       console.log(data);
       // 4. InserAdjacentHTML the weather given from the location.
       // 5. Display the weather in a box.
-      
-      const weatherBox = `<div id="weather-description">
-          <h1>${query}</h1>
-        
-          <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="Weather Icon" id="icon">
-          <p>${capitalize(data.weather[0].description)}</p>
-          <p>${Math.floor(data.main.temp)}°C</p>
-        </div>`;
+
+      const weatherBox = `
+          <div class="d-flex weather-details" style="display: flex; justify-content: space-around;">
+            <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="Weather Icon" id="icon">
+            <p>${capitalize(data.weather[0].description)}</p>
+            <p>${Math.floor(data.main.temp)}°C</p>
+          </div>
+        `;
       results.insertAdjacentHTML("beforeend", weatherBox);
     });
 };
