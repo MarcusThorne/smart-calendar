@@ -1,7 +1,7 @@
 
 <%= month_calendar do |date| %>
     <%= link_to '', "data-toggle": "modal", "data-target": "#exampleModal-#{date}"  do %>
-      <p style=“color: black;“><%= date.day %></p>
+      <p class="days-integer" style=“color: black;“><%= date.day %></p>
       <%# <% Event.where(user_id: current_user.id, end_date: date).each do |event| %>
         <%# <%= event.name %>
       <%# <% end %>
@@ -10,28 +10,74 @@
        <div class="modal-dialog modal-dialog-centered" role="document">
          <div class="modal-content">
            <div class="modal-header">
-             <h6 class="modal-title btn" id="exampleModalLongTitle"><strong>Events for : </strong>&nbsp<%= date %></h6>
+              <div>
+                <p class="day-monthly">
+                  <% if date.wday == 0 %>
+                    <%= "Sunday" %>
+                  <% elsif date.wday == 1 %>
+                    <%= "Monday" %>
+                  <% elsif date.wday == 2 %>
+                    <%= "Tuesday" %>
+                  <% elsif date.wday == 3 %>
+                    <%= "Wednesday" %>
+                  <% elsif date.wday == 4 %>
+                    <%= "Thursday" %>
+                  <% elsif date.wday == 5 %>
+                    <%= "Friday" %>
+                  <% elsif date.wday == 6 %>
+                    <%= "Saturday" %>
+                  <% end %>
+                </p>
+                <p class="month-monthly">
+                  <% if date.month == 0 %>
+                    <%= "December" %>
+                  <% elsif date.month == 1 %>
+                    <%= "January" %>
+                  <% elsif date.month == 2 %>
+                    <%= "February" %>
+                  <% elsif date.month == 3 %>
+                    <%= "March" %>
+                  <% elsif date.month == 4 %>
+                    <%= "April" %>
+                  <% elsif date.month == 5 %>
+                    <%= "May" %>
+                  <% elsif date.month == 6 %>
+                    <%= "June" %>
+                  <% elsif date.month == 7 %>
+                    <%= "July" %>
+                  <% elsif date.month == 8 %>
+                    <%= "August" %>
+                  <% elsif date.month == 9 %>
+                    <%= "September" %>
+                  <% elsif date.month == 10 %>
+                    <%= "October" %>
+                  <% elsif date.month == 11 %>
+                    <%= "November" %>
+                  <% end %>
+                </p>
+              </div>
+              <h6 class="modal-title btn" id="exampleModalLongTitle">&nbsp<%= date %></h6>
             
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-               <span aria-hidden="true">&times;</span>
-             </button>
-           </div>
-           <% Event.where(start_date: date, user: current_user).each do |event| %>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <% Event.where(start_date: date, user: current_user).each do |event| %>
               <%= link_to event_path(event), class: "links" do %>
               <div class="modal-body">
-                <%= event.name %>
+                <p style="font-weight: bold;"><%= event.name %></p>
                 <br>
-                <%= event.event_location %>
+                <i class="fas fa-thumbtack"></i> <%= event.event_location %>
                 <br>
-                <%= event.start_time.strftime("%I:%M %P") %>
+                <i class="far fa-clock"></i> <%= event.start_time.strftime("%I:%M %P") %>
 
               </div>
               <% end %>
-           <% end %>
+            <% end %>
 
-           <div class="modal-footer">
-            <%= link_to "Daily View", daily_path(start_date: date), class: "btn btn-primary add-btn"  %>
-            <a class="btn btn-secondary add-btn" href="/events/new">Add Event</a>
+            <div class="modal-footer">
+              <%= link_to "Daily View", daily_path(start_date: date), class: "btn btn-primary add-btn"  %>
+              <a class="btn btn-secondary add-btn" href="/events/new">Add Event</a>
 
            </div>
 

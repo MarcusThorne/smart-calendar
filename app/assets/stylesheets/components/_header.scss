@@ -18,9 +18,10 @@
 }
 
 .drop-down-month {
-  top: 80px;
+  top: 86px;
   right: 3vw;
   position: absolute;
+  
 }
 
 .drop-down {
@@ -29,6 +30,23 @@
   right: 1vw;
 }
 
-.daily-simple-calendar .calendar-heading {
+.daily-simple-calendar > .calendar-heading {
   position: absolute;
+  .previous {
+    position: fixed;
+    color: transparent;
+  } .next {
+    position: fixed;
+    color: transparent;
+    right: 2%;
+  }
+}
+
+.daily-view-button:hover {
+  background-color: #51575c;
+  transition-delay: 0.1s;
+}
+
+.daily-view-button {
+  border-radius: 4px;
 }

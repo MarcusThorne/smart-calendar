@@ -49,6 +49,24 @@ class Event < ApplicationRecord
     end
   end
 
+  # def day_as_string
+  #    if date.wday == 0
+  #     "Sunday"
+  #    elsif date.wday == 1
+  #     "Monday"
+  #    elsif date.wday == 2
+  #     "Tuesday"
+  #    elsif date.wday == 3
+  #     "Wednesday"
+  #    elsif date.wday == 4
+  #     "Thursday"
+  #    elsif date.wday == 5
+  #     "Friday"
+  #    elsif date.wday == 6
+  #     "Saturday"
+  #    end
+  # end
+
   private
 
   def geocode_endpoints
