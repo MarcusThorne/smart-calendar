@@ -3,17 +3,37 @@
   box-shadow: -1px -1px 6px rgba(0, 0, 0, 0.1);
   color: rgb(0, 0, 0);
   font-family: 'Hind', sans-serif;
+  display: block;
   position: absolute;
   bottom: 80px;
   text-align: center;
+  height: 200px;
   width: 100%;
   border-radius: 24px 24px 0 0;
-  background-color: rgba(241, 241, 241, 0.836) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
   h3 {
     font-weight: bold;
     font-family: 'Hind', sans-serif;
     text-align: center;
   }
+}
+
+.collapsible {
+ background-color: rgb(133, 133, 133);
+ width: 24px;
+ z-index: 50;
+ position: absolute;
+ border: none;
+ right: 46%;
+ top: 8px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active {
+  background-color: rgb(253, 55, 55);
+  height: 48px;
 }
 
 .delete-icon {
@@ -35,15 +55,19 @@
 }
 
 .weather-details {
-  width: 100vw !important;
-  justify-content: space-around;
+  padding: 16px;
+  width: 85vw !important;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
   top: 70px;
+  right: 8vw;
+  height: 40px;
   font-family: 'Titillium Web', sans-serif;
-  background-color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.95);
   z-index: 30;
-  border-radius: 0 0 24px 16px;
+  border-radius: 0 0 40px 40px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -52,5 +76,5 @@
   right: 5%;
   font-size: 20px;
   top: 8%;
-  color: grey;
+  color: rgb(31, 31, 31);
 }

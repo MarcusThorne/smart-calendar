@@ -1,13 +1,7 @@
 <div class="header">
-  <% if @day == Date.today %>
-    <h1>TODAY</h1>
-  <% else %>
-    <h1>DAILY VIEW</h1>
-  <% end %>
-
   <div class="drop-down">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      View Calendar
+      Change View
     </button>
     <div class="dropdown-menu dropdown-menu-right" style="width: " aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item" href=<%= monthly_path %>>Monthly</a>
@@ -34,6 +28,8 @@
         <% end %>
       </div>
 
+      <div class="background-color-times"></div>
+
       <div class="events-container"> 
         <% @events.each do |event| %>
           <% time_event = ((event.end_time - event.start_time) / 60) / 60 %>
@@ -45,19 +41,19 @@
           <%= link_to event_path(event) do %>
             <div class="travel_time <%= event.travel_time_class %>" style="height: <%= time_travel_percentage %>%; top: <%= ((beginning_of_day_difference / 24) * 100) - time_travel_percentage %>%; width: 200px;">
               <% unless time_travel_percentage < 0.6 %>
-                <p style="color: white;"><i class="far fa-clock"></i> <%= (time_travel * 60).round %> Minutes Travel Time</p>
+                <p style="color: black;"><i class="far fa-clock"></i> <%= (time_travel * 60).round %> Minutes Travel Time</p>
               <% end %>
             </div>
           
             <div class="event <%= event.event_time_class %> %" style="overflow: hidden; padding: 8px; height: <%= ((time_event / 24) * 100) %>%; top: <%= ((beginning_of_day_difference / 24) * 100) %>%;">
               <% unless ((time_event / 24) * 100) < 0.7 %>
-                <h4 style="color: white;"> <i class="far fa-calendar"></i> <%= event.name %> </h4>
+                <h4 class="title_daily"><%= event.name %> </h4>
               <% end %>
-              <% unless ((time_event / 24) * 100) < 2 %>
-                <p style="color: white;"> <i class="fas fa-location-arrow"></i> <%= event.event_location %></p>
+              <% unless ((time_event / 24) * 100) < 3 %>
+                <p style="color: black;"><i class="fas fa-thumbtack"></i> <%= event.event_location %></p>
               <% end %>
               <% unless ((time_event / 24) * 100) < 5 %>
-                <p style="color: white;"> <i class="fas fa-align-justify"></i> <%= event.description %></p>
+                <p style="color: black;"><%= event.description %></p>
               <% end %>
             </div>
           <% end %>

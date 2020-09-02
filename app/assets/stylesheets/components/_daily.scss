@@ -1,7 +1,6 @@
 #daily-card {
   display: flex;
   justify-content: space-evenly;
-  box-shadow: 100px 100px black;
 }
 
 .simple-calendar {
@@ -21,6 +20,11 @@ p {
   display: flex;
   flex-direction: column;
   text-align: center;
+  font-size: 20px;
+  position: absolute;
+  left: 3vw;
+  color: white;
+  z-index: 5;
 }
 
 .times {
@@ -39,25 +43,37 @@ p {
   width: 100%;
 }
 
-.line {
-  border-bottom: solid 1px rgb(255, 255, 255);
-  width: 100%;
-  margin: 12px 0;
-}
+// .line {
+//   border-bottom:  solid 1px rgb(255, 109, 109);
+//   width: 77vw;
+//   margin-left: 21vw;
+// }
 
 .line-second {
-  border: solid 1px rgba(216, 216, 216, 0.397);
-  width: 85%;
+  border-bottom: solid 1px rgba(255, 109, 109, 0.3);
+  width: 77vw;
+  margin-left: 21vw;
 }
 
 .today {
-  background-color: rgb(255, 242, 221)!important;
+  background-color: #FBFBFB !important;
 }
 
 .future {
-  background-color: rgb(213, 238, 255)!important;
+  background-color: rgba(255, 255, 255, 0) !important;
 }
 
 .past {
-  background-color: rgb(234, 255, 234)!important;
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.background-color-times {
+  background-color: rgb(255, 109, 109);
+  width: 20vw;
+  position: absolute;
+  height: 2631px;
+  z-index: 0;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  top: -115px;
+  left: -4px;
 }
