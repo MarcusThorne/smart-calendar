@@ -10,7 +10,9 @@
        <div class="modal-dialog modal-dialog-centered" role="document">
          <div class="modal-content">
            <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLongTitle"> Events for <%= date %></h5>
+             <h6 class="modal-title btn" id="exampleModalLongTitle"> Events for <%= date %></h6>
+              <a class="btn" href="/events/new">Add Event</a>
+              <%= link_to "Daily View", daily_path(start_date: date), class: "btn btn-"  %>
              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                <span aria-hidden="true">&times;</span>
              </button>
@@ -27,10 +29,10 @@
               </div>
               <% end %>
            <% end %>
-           <div class="modal-footer">
+           <!-- <div class="modal-footer">
              <a class="btn" href="/events/new">Add Event</a>
                <%= link_to "Daily View", daily_path(start_date: date)  %>
-           </div>
+           </div> -->
          </div>
        </div>
      </div>
