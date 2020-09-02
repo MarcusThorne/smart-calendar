@@ -11,12 +11,14 @@
          <div class="modal-content">
            <div class="modal-header">
              <h6 class="modal-title btn" id="exampleModalLongTitle"><strong>Events for : </strong>&nbsp<%= date %></h6>
-            
+
              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                <span aria-hidden="true">&times;</span>
              </button>
            </div>
+
            <% Event.where(start_date: date, user: current_user).each do |event| %>
+
               <%= link_to event_path(event), class: "links" do %>
               <div class="modal-body">
                 <%= event.name %>
@@ -24,17 +26,16 @@
                 <%= event.event_location %>
                 <br>
                 <%= event.start_time.strftime("%I:%M %P") %>
-
               </div>
               <% end %>
+
+
            <% end %>
 
            <div class="modal-footer">
             <%= link_to "Daily View", daily_path(start_date: date), class: "btn btn-primary add-btn"  %>
             <a class="btn btn-secondary add-btn" href="/events/new">Add Event</a>
-
            </div>
-
          </div>
        </div>
      </div>
