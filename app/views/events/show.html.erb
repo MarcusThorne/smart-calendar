@@ -2,18 +2,18 @@
 </div>
 
 <div>
-  <div class="show-card <%= @event.event_time_class %>" style="z-index: 10; position; relative;">
-    <h4><%= @event.name %>
+  <div class="show-card" style="z-index: 10; position; relative;">
+    <button type="button" class="collapsible"></button>
+    <h4 style="position: relative;"><%= @event.name %>
+    <p style="margin-bottom: 12px; font-size: 20px;"><%= @event.start_date %></p>
+
     <%= link_to event_path(@event), method: :delete do %>
       <i class="fas fa-trash trash-icon"></i>
     <% end %></h4>
-    <br>
-    <p><%= @event.start_date %></p>
-    <p id="location"><%= @event.event_location %></p>
-    <p><%= @event.start_time.strftime("%I:%M %P") %> - <%= @event.end_time.strftime("%I:%M %P") %></p>
-    <br>
-    <p style="font-size: 14px; margin: 0 15%;"><%= @event.description %></p>
-    <br>
+
+    <p style="margin-bottom: 12px;" id="location"><%= @event.event_location %></p>
+    <p style="margin-bottom: 12px;"><%= @event.start_time.strftime("%I:%M %P") %> - <%= @event.end_time.strftime("%I:%M %P") %></p>
+    <p style="font-size: 12px; margin: 0 15%;"><%= @event.description %></p>
   </div>
 
   <div id="map"

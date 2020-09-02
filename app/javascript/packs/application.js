@@ -27,6 +27,7 @@ import { findLocation1, findLocation2 } from '../components/findLocation'
 import { calTime } from '../components/calTime'
 import { initMapbox } from '../components/mapBox';
 import { initWeather } from '../components/weather';
+import { collapse } from '../components/collapse';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -42,4 +43,5 @@ document.addEventListener('turbolinks:load', () => {
   calTime();
   initMapbox();
   initWeather();
+  collapse();
 });

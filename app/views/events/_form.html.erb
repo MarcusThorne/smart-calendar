@@ -1,4 +1,3 @@
-
 <%= simple_form_for @event do |f| %>
   <div class="container event_form" style="margin-bottom: 100px;">
     <%= f.input :end_date, as: :hidden, input_html: { value: @date } %>
@@ -101,7 +100,7 @@
   </div>
 
   <div class="footer">
-    <%= link_to "Back", daily_path, class:"btn btn-danger back_button", style:"text-align: center;"%>
+    <%= link_to "Back", daily_path(params[:start_date]), class:"btn btn-danger back_button", style:"text-align: center;"%>
     <%= f.button :submit, class:"btn new_event_button" %>
   </div>
 <% end %>

@@ -9,8 +9,8 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
-        <div class="drop-down" style="position: relative;">
-          <i class="profile_icon fas fa-user-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 35px; color: white; text-shadow: 1px 1px rgba(0, 0, 0, 0.1)"></i>
+        <div class="settings-drop-down" style="position: relative;">
+          <i class="settings fas fa-bars" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 35px; color: grey;"></i>
           <div style="position: absolute !important; padding: 0; font-size: 16px; text-align: right; min-width: auto;" class="no-border dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
           </div>
