@@ -13,7 +13,7 @@ class UserMailer < ApplicationMailer
 
   def event
     @user = params[:user] # Instance variable => available in view
-    mail(to: @user.email, subject: 'LEAVE NOW or DIE')
+    mail(to: @user.email, subject: 'Leave Now Tso Make Your Event On Time')
   end
 
 end
