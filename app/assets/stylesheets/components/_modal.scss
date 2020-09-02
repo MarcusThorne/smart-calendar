@@ -1,0 +1,31 @@
+.modal-body {
+  border-top: 2px solid #dee2e6;
+  list-style-type: none;
+}
+
+.links {
+  text-decoration: none;
+  color: #0E0000;
+  font-weight: lighter;
+}
+
+.links:hover {
+   text-decoration: none!important;
+
+}
+
+.modal-header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 10;
+  }
+
+  .modal-body {
+    width: 100%;
+  }
+// .modal {
+//   max-height: 80vh;
+//   display: block;
+//   padding-left: 0px;
+// }
