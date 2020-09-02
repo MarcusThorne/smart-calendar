@@ -1,11 +1,40 @@
+
 <%= month_calendar do |date| %>
-  <%= link_to daily_path(start_date: date) do %>
-    <p style="color: black;"><%= date.day %></p>
-    <%# <% Event.where(user_id: current_user.id, end_date: date).each do |event| %>
-      <%# <%= event.name %>
-    <%# <% end %>
+    <%= link_to '', "data-toggle": "modal", "data-target": "#exampleModal-#{date}"  do %>
+      <p style=“color: black;“><%= date.day %></p>
+      <%# <% Event.where(user_id: current_user.id, end_date: date).each do |event| %>
+        <%# <%= event.name %>
+      <%# <% end %>
+    <% end %>
+     <div class="modal fade" id="exampleModal-<%= date %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLongTitle"> Events for <%= date %></h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <% Event.where(start_date: date, user: current_user).each do |event| %>
+              <%= link_to event_path(event), class: "links" do %>
+              <div class="modal-body">
+                <%= event.name %>
+                <br>
+                <%= event.event_location %>
+                <br>
+                <%= event.start_time.strftime("%I:%M %P") %>
+
+              </div>
+              <% end %>
+           <% end %>
+           <div class="modal-footer">
+             <a class="btn" href="/events/new">Add Event</a>
+               <%= link_to "Daily View", daily_path(start_date: date)  %>
+           </div>
+         </div>
+       </div>
+     </div>
   <% end %>
-<% end %>
 
 <i class="next_button fas fa-arrow-circle-right"></i>
 <i class="previous_button fas fa-arrow-circle-right"></i>
