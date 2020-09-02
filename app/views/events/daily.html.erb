@@ -17,7 +17,7 @@
       <div class="times-display">
         <% array.each do |time| %>
           <div class="d-flex align-items-center justify-content-between">
-            <p class="time"><%= time %></p>
+            <p class="daily-time"><%= time %></p>
             <div class="line-second"></div>
           </div>
           <% if time != "24:00" %>
@@ -30,21 +30,21 @@
 
       <div class="background-color-times"></div>
 
-      <div class="events-container"> 
+      <div class="events-container">
         <% @events.each do |event| %>
           <% time_event = ((event.end_time - event.start_time) / 60) / 60 %>
           <% beginning_of_day_difference = ((event.start_time - event.start_time.beginning_of_day) / 60) / 60 %>
           <% time_travel = (event.time_difference / (1000 * 60 * 60)) %>
           <% time_travel_percentage = (time_travel / 24) * 100 %>
           <% minus_travel = event.time_difference %>
-          
+
           <%= link_to event_path(event) do %>
             <div class="travel_time <%= event.travel_time_class %>" style="height: <%= time_travel_percentage %>%; top: <%= ((beginning_of_day_difference / 24) * 100) - time_travel_percentage %>%; width: 200px;">
               <% unless time_travel_percentage < 0.6 %>
                 <p style="color: black;"><i class="far fa-clock"></i> <%= (time_travel * 60).round %> Minutes Travel Time</p>
               <% end %>
             </div>
-          
+
             <div class="event <%= event.event_time_class %> %" style="overflow: hidden; padding: 8px; height: <%= ((time_event / 24) * 100) %>%; top: <%= ((beginning_of_day_difference / 24) * 100) %>%;">
               <% unless ((time_event / 24) * 100) < 0.7 %>
                 <h4 class="title_daily"><%= event.name %> </h4>
@@ -61,7 +61,7 @@
       </div>
     </div>
   <% end %>
-  
+
   <i class="next_button fas fa-arrow-circle-right"></i>
   <i class="previous_button fas fa-arrow-circle-right"></i>
 
