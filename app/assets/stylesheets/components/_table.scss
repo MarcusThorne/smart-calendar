@@ -16,17 +16,18 @@
 
 .daily_day {
   position: absolute;
-  top: 75px;
+  top: 67px;
   border: 1px solid white;
   font-size: 32px;
   border: none !important;
-  margin-left: 23vw;
+  margin-left: 70px;
 }
 
 .daily-simple-calendar {
   margin-top: 30px;
   width: 100%;
   background-color: #FBFBFB;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .simple-calendar td {
