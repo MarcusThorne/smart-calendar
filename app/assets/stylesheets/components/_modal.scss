@@ -11,7 +11,6 @@
 
 .links:hover {
    text-decoration: none!important;
-
 }
 
 .modal-header {
@@ -24,6 +23,11 @@
   .modal-body {
     width: 100%;
   }
+
+  .add-btn {
+    border-radius: 20px;
+  }
+
 // .modal {
 //   max-height: 80vh;
 //   display: block;
