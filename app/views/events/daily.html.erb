@@ -5,7 +5,7 @@
     </button>
     <div class="dropdown-menu dropdown-menu-right" style="width: " aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item" href=<%= monthly_path %>>Monthly</a>
-      <%# <a class="dropdown-item" href=<%= weekly_path %>
+      <a class="dropdown-item" href=<%= weekly_path %>>Weekly</a>
     </div>
   </div>
 </div>
@@ -17,11 +17,14 @@
       <div class="times-display">
         <% array.each do |time| %>
           <div class="d-flex align-items-center justify-content-between">
-
-            <p class="time"><%= time %></p>
-            <div class="line"></div>
-        
+            <p class="daily-time"><%= time %></p>
+            <div class="line-second"></div>
           </div>
+          <% if time != "24:00" %>
+            <% 3.times do %>
+              <div class="line"></div>
+            <% end %>
+          <% end %>
         <% end %>
       </div>
 
@@ -46,14 +49,11 @@
               <% unless ((time_event / 24) * 100) < 0.7 %>
                 <h4 class="title_daily"><%= event.name %> </h4>
               <% end %>
-              <% unless ((time_event / 24) * 100) < 2 %>
-                <p style="color: black; font-size: 16px;"><i class="fas fa-thumbtack"></i> <%= event.event_location %></p>
+              <% unless ((time_event / 24) * 100) < 3 %>
+                <p style="color: black;"><i class="fas fa-thumbtack"></i> <%= event.event_location %></p>
               <% end %>
               <% unless ((time_event / 24) * 100) < 5 %>
-                <p style="color: black;"><i class="fas fa-tags"></i> <%= event.category %></p>
-              <% end %>
-              <% unless ((time_event / 24) * 100) < 7 %>
-                <p style="color: black;"><i class="far fa-clipboard"></i> <%= event.description %></p>
+                <p style="color: black;"><%= event.description %></p>
               <% end %>
             </div>
           <% end %>
@@ -68,6 +68,6 @@
 </div>
 
 <div class="footer">
-  <%= link_to "Back", :back, class:"btn btn-danger back_button", style:"text-align: center;"%>
+  <%= link_to "Back", monthly_path, class:"btn btn-danger back_button", style:"text-align: center;"%>
   <%= link_to "Add an Event", new_event_path(date: @day), class:"btn create_event_button"%>
 </div>
