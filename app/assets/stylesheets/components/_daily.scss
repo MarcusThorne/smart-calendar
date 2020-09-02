@@ -75,20 +75,20 @@ p {
 }
 
 .month-tr .past {
-  background-color: #e1f9ff !important;
-  border-right: 1px solid whitesmoke !important;
+  background-color: #e85470 !important;
   border-bottom: 1px solid whitesmoke !important;
+  .days-integer {
+    color: white;
+  }
 }
 
 .month-tr .today {
-  background-color: #bbffbb !important;
-  border-right: 1px solid whitesmoke !important;
+  background-color: #ffffff !important;;
   border-bottom: 1px solid whitesmoke !important;
 }
 
 .month-tr .future {
-  background-color: #ffc8c8 !important;
-  border-right: 1px solid whitesmoke !important;
+  background-color: #bbffbb !important;
   border-bottom: 1px solid whitesmoke !important;
 }
 

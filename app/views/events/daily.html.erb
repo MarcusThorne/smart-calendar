@@ -1,10 +1,11 @@
 <div class="header">
   <div class="drop-down">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <%= link_to "Monthly View", monthly_path, class: "btn btn-secondary daily-view-button" %>
+    <%# <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Change View
     </button>
     <div class="dropdown-menu dropdown-menu-right" style="width: " aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href=<%= monthly_path %>>Monthly</a>
+      <a class="dropdown-item" href=<%= monthly_path %>
       <%# <a class="dropdown-item" href=<%= weekly_path %>
     </div>
   </div>
@@ -46,14 +47,18 @@
               <% unless ((time_event / 24) * 100) < 0.7 %>
                 <h4 class="title_daily"><%= event.name %> </h4>
               <% end %>
-              <% unless ((time_event / 24) * 100) < 2 %>
+              <% unless ((time_event / 24) * 100) < 5 %>
                 <p style="color: black; font-size: 16px;"><i class="fas fa-thumbtack"></i> <%= event.event_location %></p>
               <% end %>
-              <% unless ((time_event / 24) * 100) < 5 %>
+              <% unless ((time_event / 24) * 100) < 7 %>
                 <p style="color: black;"><i class="fas fa-tags"></i> <%= event.category %></p>
               <% end %>
-              <% unless ((time_event / 24) * 100) < 7 %>
-                <p style="color: black;"><i class="far fa-clipboard"></i> <%= event.description %></p>
+              <% unless ((time_event / 24) * 100) < 12 %>
+                <% if event.description == "" %>
+                  <p style="color: black;"><%= event.description %></p>
+                <% else %>
+                  <p style="color: black;"><i class="far fa-clipboard"></i> <%= event.description %></p>
+                <% end %>
               <% end %>
             </div>
           <% end %>
@@ -69,5 +74,5 @@
 
 <div class="footer">
   <%= link_to "Back", :back, class:"btn btn-danger back_button", style:"text-align: center;"%>
-  <%= link_to "Add an Event", new_event_path(date: @day), class:"btn create_event_button"%>
+  <%= link_to "Add Event", new_event_path(date: @day), class:"btn create_event_button"%>
 </div>

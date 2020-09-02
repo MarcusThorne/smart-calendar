@@ -1,5 +1,5 @@
 .table {
-  height: 70vh;
+  height: 72.5vh;
   margin-top: 32px;
   margin-bottom: 92px;
   width: 100vw;
@@ -8,6 +8,7 @@
 .simple-calendar {
   display: flex;
   justify-content: space-around;
+  width: 100%;
 }
 
 .daily_table {
@@ -32,4 +33,32 @@
 
 .simple-calendar td {
   border: none!important;
+}
+
+.table-header {
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1) !important;
+  border-top: none !important;
+}
+
+.date-monthly-page {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -10px;
+}
+
+.month-monthly-page {
+  margin-bottom: -5px;
+}
+
+.monthly-table {
+  box-shadow: -1px -1px 8px rgba(129, 129, 129, 0.1);
+}
+
+.days-integer:hover {
+  font-size: 26px;
+  text-decoration: none !important;
+  transition-delay: 0.1s;
 }
