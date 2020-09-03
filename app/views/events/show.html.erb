@@ -4,14 +4,17 @@
 <div>
   <div class="show-card" style="z-index: 10; position; relative;">
     <button type="button" class="collapsible"></button>
-    <h4 style="position: relative;"><%= @event.name %>
-    <p style="margin-bottom: 12px; font-size: 20px;"><%= @event.start_date %></p>
-
+    <h4 style="position: relative; margin-bottom: 2px;"><%= @event.name %>
     <%= link_to event_path(@event), method: :delete do %>
       <i class="fas fa-trash trash-icon"></i>
     <% end %></h4>
-
-    <p style="margin-bottom: 12px;" id="location"><i class="fas fa-thumbtack"></i> <%= @event.event_location %></p>
+    
+    <p style="margin-bottom: 12px; font-size: 20px;"><%= @event.start_date %></p>
+    
+    <div style="display: flex; justify-content: center;">
+      <i style="margin-top: 2px;" class="fas fa-thumbtack"></i>
+      <p style="margin-bottom: 12px; margin-left: 4px;" id="location"><%= @event.event_location %></p>
+    </div>
     <p style="margin-bottom: 12px;"><i class="far fa-clock"></i> <%= @event.start_time.strftime("%I:%M %P") %> - <%= @event.end_time.strftime("%I:%M %P") %></p>
     <% if @event.description != "" %>
       <p style="font-size: 12px; margin: 0 15%;"><i class="far fa-clipboard"></i> <%= @event.description %></p>
@@ -26,6 +29,6 @@
 </div>
 
 <div class="footer">
-  <%= link_to "Back", :back, class:"btn btn-danger back_button", style:"text-align: center;"%>
+  <%= link_to "Back", :back, class:"btn back_button", style:"text-align: center;"%>
   <%= link_to "Edit Event", edit_event_path(@event), class: "btn edit_event_button" %>
 </div>

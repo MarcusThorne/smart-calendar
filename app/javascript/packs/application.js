@@ -35,6 +35,8 @@ import { collapse } from '../components/collapse';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initWeather();
+
   const eventForm = document.querySelector(".event_form");
   if (eventForm) {
     findLocation1();

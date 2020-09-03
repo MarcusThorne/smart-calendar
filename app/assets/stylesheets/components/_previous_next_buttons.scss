@@ -19,6 +19,7 @@
   bottom: 90px;
   color: rgba(0, 0, 0, 0.5);
   pointer-events: none;
+  z-index: 505;
   &:hover {
     font-size: 36px;
     color: rgba(0, 0, 0, 0.75);
