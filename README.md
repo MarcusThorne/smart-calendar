@@ -30,9 +30,9 @@
 
 ## About The Project
 
-![Screenshot 2020-09-03 at 08 55 37](https://user-images.githubusercontent.com/46029164/92087434-5fce9080-edc3-11ea-8c6e-0bcb5a343cf1.png)
-![Screenshot 2020-09-03 at 08 55 54](https://user-images.githubusercontent.com/46029164/92087440-61985400-edc3-11ea-8f0a-78b84a83ce88.png)
-![Screenshot 2020-09-03 at 08 56 22](https://user-images.githubusercontent.com/46029164/92087445-63621780-edc3-11ea-9994-6b857a200351.png)
+![Webp net-resizeimage (3)](https://user-images.githubusercontent.com/46029164/92089762-82ae7400-edc6-11ea-98a2-ba4095219f14.png)
+![Webp net-resizeimage (2)](https://user-images.githubusercontent.com/46029164/92089781-88a45500-edc6-11ea-83e9-79b6a4c272ab.png)
+![Webp net-resizeimage (1)](https://user-images.githubusercontent.com/46029164/92089815-8fcb6300-edc6-11ea-8302-569365f896fa.png)
 
 This repository contains a web application - Smart Calendar where users can set up events, which will be notified when to leave via email based on the estmiated location and the event location.
 
