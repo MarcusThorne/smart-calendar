@@ -13,12 +13,13 @@
 
 .back_button {
   width: 20%;
-  height: 30px;
+  height: 40px;
   border-radius: 12px;
   text-align: center;
   background-color: #E85470;
-  padding: 2px 1px;
-  margin-top: 2px;
+  padding-top: 7px;
+  margin-top: -4px;
+  color: white;
 }
 
 .create_event_button {
@@ -47,6 +48,6 @@
   border-radius: 12px;
   color: white;
   margin-top: -4px;
-  background-color: #4dc2f8;
+  background-color: #26547c;
   padding-top: 7px;
 }
