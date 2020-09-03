@@ -4,13 +4,13 @@
 <div class="container d-flex flex-column justify-content-center align-items-center mt-5 main">
 
     <!-- <h1>SmartCal</h1> -->
-  <div class="main-heading text-center mb-5" style="width: 70%;"><h1><strong>SMART CALENDAR</strong></h1></div>
-  <p>Join</p>
-  <div class="button-width"><%= link_to "SIGN-IN", new_user_session_path ,class: "btn  btn-sm btn-block buttons mt-3 mb-3"%></div>
-  <div class="button-width"><%= link_to "SIGN-UP", new_registration_path(:user),class: "btn btn-sm btn-block buttons mb-5 " %></div>
-  <div class="text d-flex justify-content-center">Find your place, Find your time!</div>
-  <%= image_tag "smart_cal.png", style:"width: 140px; margin-top: 40px;" %>
-
+  <div class="main-heading text-center mb-5" style="width: 70%; font-size: 20px;"><h1><strong>Smart Calendar</strong></h1></div>
+  <p class="join-text" >Join today!</p>
+  <div class="login-buttons" >
+    <div class="button-width"><%= link_to "SIGN-IN", new_user_session_path ,class: "btn  btn-sm btn-block buttons mt-3 mb-3 login-button"%></div>
+    <div class="button-width"><%= link_to "SIGN-UP", new_registration_path(:user),class: "btn btn-sm btn-block buttons mb-5 signup-button" %></div>
+  </div>
+  <div class="text-home d-flex justify-content-center">Find your place, <br> Find your time!</div>
 </div>
 <!-- <button class="button"><span>SIGN-IN</span></button> -->
 <!-- <p>Find me in app/views/pages/home.html.erb</p> -->

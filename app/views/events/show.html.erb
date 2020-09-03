@@ -5,13 +5,13 @@
   <div class="show-card" style="z-index: 10; position; relative;">
     <button type="button" class="collapsible"></button>
     <h4 style="position: relative; margin-bottom: 2px;"><%= @event.name %>
-    <%= link_to event_path(@event), method: :delete do %>
+    <%= link_to event_path(@event), method: :delete, data: { confirm: "Are you sure you would like to DELETE " + @event.name }, class:"icon", style:"margin-left: 8px;" do %>
       <i class="fas fa-trash trash-icon"></i>
     <% end %></h4>
     
-    <p style="margin-bottom: 12px; font-size: 20px;"><%= @event.start_date %></p>
+    <p style="margin-bottom: 12px; margin-top: 6px; font-size: 20px;"><%= @event.start_date %></p>
     
-    <div style="display: flex; justify-content: center;">
+    <div style="display: flex; justify-content: center !important;">
       <i style="margin-top: 2px;" class="fas fa-thumbtack"></i>
       <p style="margin-bottom: 12px; margin-left: 4px;" id="location"><%= @event.event_location %></p>
     </div>

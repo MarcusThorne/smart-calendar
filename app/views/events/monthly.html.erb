@@ -62,21 +62,24 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <% Event.where(start_date: date, user: current_user).each do |event| %>
-              <%= link_to event_path(event), class: "links" do %>
-              <div class="modal-body">
-                <p style="font-weight: bold;"><%= event.name %></p>
-                <br>
-                <i class="fas fa-thumbtack"></i> <%= event.event_location %>
-                <br>
-                <i class="far fa-clock"></i> <%= event.start_time.strftime("%I:%M %P") %>
-
-              </div>
+            <% if Event.where(start_date: date, user: current_user).empty? %>
+              <p class="no-event-listed" >No events listed</p>
+            <% else %>
+              <% Event.where(start_date: date, user: current_user).each do |event| %>
+                <%= link_to event_path(event), class: "links" do %>
+                  <div class="modal-body">
+                    <p style="font-weight: bold;"><%= event.name %></p>
+                    <br>
+                    <i class="fas fa-thumbtack"></i> <%= event.event_location %>
+                    <br>
+                    <i class="far fa-clock"></i> <%= event.start_time.strftime("%I:%M %P") %>
+                  </div>
+                <% end %>
               <% end %>
             <% end %>
 
             <div class="modal-footer">
-              <%= link_to "Daily View", daily_path(start_date: date), class: "btn btn-primary add-btn"  %>
+              <%= link_to "Daily View", daily_path(start_date: date), class: "btn daily-view-button add-btn"  %>
               <!-- <a class="btn btn-secondary add-btn" href="/events/new">Add Event</a> -->
               <%= link_to "Add Event", new_event_path(date: date), class:"btn btn-secondary add-btn"%>
 

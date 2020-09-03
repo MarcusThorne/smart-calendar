@@ -88,8 +88,11 @@ p {
 }
 
 .month-tr .future {
-  background-color: #bbffbb !important;
+  background-color: #AFE7AE !important;
   border-bottom: 1px solid whitesmoke !important;
+  .days-integer {
+    color: black !important;
+  }
 }
 
 .month-and-year {

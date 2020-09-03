@@ -25,7 +25,7 @@
   }
 
   .add-btn {
-    border-radius: 20px;
+    border-radius: 12px;
   }
 
 // .modal {
@@ -57,4 +57,14 @@
   text-decoration: none;
   color: black;
   font-size: 20px;
+}
+
+.daily-view-button {
+  background-color: #26547C;
+  color: white;
+}
+
+.no-event-listed {
+  padding: 16px;
+  background-color: rgba(245, 245, 245, 0.247);
 }

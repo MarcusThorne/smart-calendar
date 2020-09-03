@@ -1,4 +1,12 @@
-// Specific CSS for your home-page
+// // Specific CSS for your home-page
+// body {
+//   background-image: url(jess-bailey-mexeVPlTB6k-unsplash.jpg);
+//   height: 100vh;
+//   background-position: center; /* Center the image */
+//   background-repeat: no-repeat; /* Do not repeat the image */
+//   background-size: cover;
+// }
+
 .button-width {
   width: 200px;
 }
@@ -10,8 +18,36 @@
   color: white;
 }
 
-.text {
+.text-home {
   text-align: center;
-  margin: 40px 0;
+  margin: -8px;
   width: 50%;
+}
+
+.join-text {
+  font-size: 12px;
+  margin-bottom: -0px;
+  margin-left: -110px;
+}
+
+.login-buttons {
+  margin-top: -16px;
+  width: 187px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.login-button{
+  width: 187px;
+  font-weight: bold;
+  background-color: #26547C;
+}
+
+.signup-button {
+  width: 187px;
+  border: 1px solid #26547C;
+  background-color: white;
+  color: #26547C;
+  font-weight: bold;
 }

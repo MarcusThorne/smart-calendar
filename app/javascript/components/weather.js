@@ -17,7 +17,7 @@ const findLocation = (query, results) => {
           <div class="d-flex weather-details" style="display: flex; justify-content: space-around;">
             <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="Weather Icon" id="icon">
             <p>${capitalize(data.weather[0].description)}</p>
-            <p>${Math.floor(data.main.temp)}°C</p>
+            <p><strong>${Math.floor(data.main.temp)}°C</strong></p>
           </div>
         `;
       results.insertAdjacentHTML("beforeend", weatherBox);
