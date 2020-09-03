@@ -39,7 +39,9 @@
   </div>
 
   <div class="footer">
-    <%= link_to "Back", daily_path(params[:start_date]), class:"btn back_button", style:"text-align: center;"%>
-    <%= f.button :submit, class:"btn new_event_button" %>
+    <div class="footer-buttons">
+      <%= link_to "Back", daily_path(params[:start_date]), class:"btn back_button", style:"text-align: center;"%>
+      <%= f.button :submit, class:"btn new_event_button" %>
+    </div>
   </div>
 <% end %>

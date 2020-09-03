@@ -1,6 +1,6 @@
 <div class="header">
   <div class="drop-down">
-    <%= link_to "Monthly View", monthly_path, class: "btn btn-secondary daily-view-button" %>
+    <%= link_to "Monthly View", monthly_path, class: "btn daily-view-button" %>
     <%# <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Change View
     </button>
@@ -73,6 +73,8 @@
 </div>
 
 <div class="footer">
-  <%= link_to "Back", monthly_path, class:"btn back_button", style:"text-align: center;"%>
-  <%= link_to "Add Event", new_event_path(date: @day), class:"btn create_event_button"%>
+  <div class="footer-buttons">
+    <%= link_to "Back", monthly_path, class:"btn back_button", style:"text-align: center;"%>
+    <%= link_to "Add Event", new_event_path(date: @day), class:"btn create_event_button"%>
+  </div>
 </div>

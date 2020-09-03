@@ -8,6 +8,19 @@
     <thead class="table_daily_head">
       <tr class="daily_days">
         <% date_range.slice(0, 7).each do |day| %>
+        <% th = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 24, 25, 26, 27, 28, 29, 30] %>
+          <th style="position: absolute; left: 68px; font-size: 14px; top: 73px;" class="daily_day"><% if day.day == 1 || day.day == 21 || day.day == 31 %>
+            <%= day.day %>st
+          <% elsif th.include?(day.day) %>
+            <%= day.day %>th
+          <% elsif day.day == 2 || day.day == 22 %>
+            <%= day.day %>nd
+          <% elsif day.day == 3 || day.day == 23 %>
+            <%= day.day %>rd
+          <% end %>
+          
+          
+          </th>
           <th class="daily_day"><%= t('date.abbr_day_names')[day.wday] %></th>
           <th class="daily_day" style="font-size: 11px; top: 104px;"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></th>
         <% end %>
