@@ -57,7 +57,7 @@
                 </p>
               </div>
               <h6 class="modal-title btn" id="exampleModalLongTitle">&nbsp<%= date %></h6>
-            
+
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -77,7 +77,8 @@
 
             <div class="modal-footer">
               <%= link_to "Daily View", daily_path(start_date: date), class: "btn btn-primary add-btn"  %>
-              <a class="btn btn-secondary add-btn" href="/events/new">Add Event</a>
+              <!-- <a class="btn btn-secondary add-btn" href="/events/new">Add Event</a> -->
+              <%= link_to "Add Event", new_event_path(date: date), class:"btn btn-secondary add-btn"%>
 
            </div>
 
