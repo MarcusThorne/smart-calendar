@@ -36,7 +36,7 @@
 
 This repository contains a web application - Smart Calendar where users can set up events, which will be notified when to leave via email based on the estmiated location and the event location.
 
-This Rails app is generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates),
+This Rails app is a student project which is generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates),
 which is created using Rails, PostgreSQL, Devise, simple Calendar, Mapbox API, Developer routing API and sidekiq. The live website has been deployed to
 Heroku. This project was developed by [Marcus](https://github.com/MarcusThorne),
 [Aidan](https://github.com/Scotland05), [Rohit](https://github.com/Ritz2286) & [Zee](https://github.com/zeemai).
