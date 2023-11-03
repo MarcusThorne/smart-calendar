@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.4'
+ruby '3.1.2'
 
 gem 'geocoder'
 gem "simple_calendar", "~> 2.0"
@@ -31,7 +31,6 @@ gem 'validates_overlap'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'letter_opener', group: :development
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
